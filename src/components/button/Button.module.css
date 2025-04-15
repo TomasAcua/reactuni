@@ -1,0 +1,10 @@
+.button{
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor:pointer;
+    transition: 0.2  ease-in-out;
+}
+.primary{
+    background-color: aquamarine ;
+}

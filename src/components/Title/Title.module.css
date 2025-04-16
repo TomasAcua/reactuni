@@ -1,6 +1,12 @@
-.title{
+.title {
     font-size: 4rem;
-    color: aquamarine;
     text-align: center;
     margin: auto;
-}
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, white, crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+  }
+  

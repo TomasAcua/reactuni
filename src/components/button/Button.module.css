@@ -1,10 +1,24 @@
-.button{
-    padding: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor:pointer;
-    transition: 0.2  ease-in-out;
+.button {
+  padding: 1rem;
+  margin: 5px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  letter-spacing: 0.5px;
 }
-.primary{
-    background-color: aquamarine ;
+
+.button.primary {
+  background: linear-gradient(180deg, indianred, crimson);
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.button.primary:hover {
+  background-color: black;
+  transform: scale(1.05);
+}
+

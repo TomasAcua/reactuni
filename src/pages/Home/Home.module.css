@@ -1,8 +1,10 @@
 .container{
     padding: 2rem;
+    margin: 2rem auto;
 }
 .listContainer{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;

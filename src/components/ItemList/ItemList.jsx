@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ItemList.module.css';
+import Button from '../button/Button'
 
 const ItemList = ({ title, items, onToggleVisto, onDelete }) => {
   const totalPorGenero = items.reduce((acc, item) => {
@@ -28,10 +29,10 @@ const ItemList = ({ title, items, onToggleVisto, onDelete }) => {
                 Año: {item.año} | Rating: {item.rating}
               </div>
               <div>
-                <button onClick={() => onToggleVisto(item)}>
+                <Button onClick={() => onToggleVisto(item)}>
                   {title === "Por Ver" ? "Marcar como Visto" : "Mover a Por Ver"}
-                </button>
-                <button onClick={() => onDelete(item)}>Eliminar</button>
+                </Button>
+                <Button onClick={() => onDelete(item)}>Eliminar</Button>
               </div>
             </li>
           ))}

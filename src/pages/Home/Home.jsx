@@ -4,7 +4,7 @@ import ItemList from "../../components/ItemList/ItemList.jsx";
 import Form from "../../components/form/form.jsx";
 import styles from "./home.module.css";
 import inceptionImg from "../../assets/img/inception.png";
-import Button from "../../components/button/button.jsx";
+import Button from "../../components/button/Button.jsx";
 import Filters from "../../components/filters/Filters.jsx";
 
 const Home = () => {

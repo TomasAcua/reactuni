@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Form.module.css";
+import styles from "./form.module.css";
 import Button from "../button/Button";
 
 const Form = ({ onAdd }) => {

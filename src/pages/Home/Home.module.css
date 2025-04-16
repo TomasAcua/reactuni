@@ -2,10 +2,10 @@
     padding: 2rem;
     margin: 2rem auto;
 }
-.listContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
+.listContainer {
+    display: flex; 
+    flex-direction: row; /* Alinea las listas horizontalmente */
+    justify-content: space-between; 
+    align-items: flex-start; /* Alinea las listas al inicio vertical */
+    gap: 2rem; 
 }

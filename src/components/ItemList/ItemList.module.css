@@ -1,13 +1,14 @@
 .listContainer {
   margin: 1rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 45%; /* Limita el ancho máximo de cada lista */
   border-radius: 10px;
   padding: 1rem;
   background: linear-gradient(180deg, grey, black);
   flex-grow: 1;
+  flex: 1; /* Permite que las listas ocupen el mismo espacio */
+  min-width: 300px; /* Asegura un ancho mínimo */
 }
-
 
 .itemList {
   list-style: none;

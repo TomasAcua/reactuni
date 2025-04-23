@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./form.module.css";
 import Button from "../button/Button";
+
 
 const Form = ({ onAdd }) => {
   const [form, setForm] = useState({
@@ -11,6 +12,7 @@ const Form = ({ onAdd }) => {
     rating: "",
     tipo: "Película",
     imagen: "",
+    nota: "",
   });
 
   const handleChange = (e) => {
@@ -19,22 +21,51 @@ const Form = ({ onAdd }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAdd({
-      ...form,
-      id: crypto.randomUUID(),
-      año: Number(form.año),
-      rating: Number(form.rating),
-    });
+
+    const añoValido = Number(form.año) >= 1600 && Number(form.año) <= new Date().getFullYear();
+    const ratingValido = Number(form.rating) >= 0 && Number(form.rating) <= 10;
+
+    if (!añoValido) {
+      alert("El año debe ser entre 1600 y el actual.");
+      return;
+    }
+
+    if (!ratingValido) {
+      alert("El rating debe estar entre 0 y 10.");
+      return;
+    }
+
+    onAdd({ ...form, id: crypto.randomUUID(), año: Number(form.año), rating: Number(form.rating) });
     setForm({
-      titulo: "",
-      director: "",
-      año: "",
-      genero: "Acción",
-      rating: "",
-      tipo: "Película",
-      imagen: "",
+      titulo: '',
+      director: '',
+      año: '',
+      genero: 'Acción',
+      rating: '',
+      tipo: 'Película',
+      imagen: '',
+      nota: "",
     });
   };
+
+  useEffect(() => {
+    const fetchPoster = async () => {
+      if (form.titulo.length < 3) return;
+  
+      try {
+        const res = await fetch(`https://www.omdbapi.com/?t=${form.titulo}&apikey=2bc42f63`);
+        const data = await res.json();
+        if (data.Response === "True" && data.Poster && data.Poster !== "N/A") {
+          setForm(prev => ({ ...prev, imagen: data.Poster }));
+        }
+      } catch (err) {
+        console.error("Error al buscar imagen:", err);
+      }
+    };
+  
+    fetchPoster();
+  }, [form.titulo]);
+  
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
@@ -45,6 +76,7 @@ const Form = ({ onAdd }) => {
         onChange={handleChange}
         required
       />
+      
       <input
         name="director"
         placeholder="Director"
@@ -86,6 +118,13 @@ const Form = ({ onAdd }) => {
         onChange={handleChange}
         required
       />
+      <textarea
+        name="nota"
+        placeholder="Notas personales (opcional)"
+        value={form.nota}
+        onChange={handleChange}
+      />
+
       <div className={styles.buttonContainer}>
         <Button type="submit">Agregar</Button>
       </div>

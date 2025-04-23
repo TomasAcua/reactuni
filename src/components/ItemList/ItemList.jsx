@@ -27,6 +27,7 @@ const ItemList = ({ title, items, onToggleVisto, onDelete }) => {
                 <strong>{item.titulo}</strong> ({item.tipo})<br />
                 Director: {item.director}<br />
                 Año: {item.año} | Rating: {item.rating}
+                {item.nota && <p className={styles.nota}>📝 {item.nota}</p>}
               </div>
               <div>
                 <Button onClick={() => onToggleVisto(item)}>

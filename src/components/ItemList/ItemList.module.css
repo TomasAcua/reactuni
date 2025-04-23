@@ -34,3 +34,10 @@
   font-style: italic;
   color: red;
 }
+.nota {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+

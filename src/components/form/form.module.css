@@ -20,7 +20,7 @@
 }
 
 input,
-select {
+select{
   padding: 0.5rem;
   margin: 2px;
   border: 1px solid slategray;
@@ -29,6 +29,22 @@ select {
   background-color: #ffffff;
   color: black; /* Texto */
 }
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.5rem;
+  margin: 2px 0;
+  border: 1px solid slategray;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: black;
+  box-sizing: border-box;
+  resize: vertical;
+  display: block;
+}
+
 
 .buttonContainer {
   width: 100%;

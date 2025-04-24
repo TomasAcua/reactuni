@@ -52,6 +52,7 @@ const Form = ({ onAdd }) => {
     const fetchPoster = async () => {
       if (form.titulo.length < 3) return;
   
+      //Muy lindo feature. Podrian tener esta url en un .env (investigar como se hace) asi no lo hacen tan publico al apikey que es informacion sensible
       try {
         const res = await fetch(`https://www.omdbapi.com/?t=${form.titulo}&apikey=2bc42f63`);
         const data = await res.json();
